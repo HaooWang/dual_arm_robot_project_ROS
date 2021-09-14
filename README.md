@@ -1,0 +1,2 @@
+# dual_arm_robot_project_ROS
+飞行双臂机器人ROS软件包集，包括单机械臂运动控制包、双臂机器人协同控制功能包、VINS-Fusion单目双目视觉SLAM、ZED双目相机ROS功能包等
