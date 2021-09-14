@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="dual_RS006L">
+  <link
+    name="world">
+    <inertial>
+      <origin
+        xyz="-0.3413 0.49115 -0.23034"
+        rpy="0 0 0" />
+      <mass
+        value="160" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/world.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/world.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_base_link">
+    <inertial>
+      <origin
+        xyz="0.31999 0.05784 -0.20588"
+        rpy="0 0 0" />
+      <mass
+        value="89718" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/left_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/left_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_left_world2base"
+    type="fixed">
+    <origin
+      xyz="-0.81542 0.37215 -1.2303"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="world" />
+    <child
+      link="left_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_ax1_link">
+    <inertial>
+      <origin
+        xyz="-0.0110267668414822 0.0275266571302226 0.155775967646813"
+        rpy="0 0 0" />
+      <mass
+        value="16.3852569222443" />
+      <inertia
+        ixx="0.166667166721534"
+        ixy="-0.00677726239836003"
+        ixz="-0.0181045931144192"
+        iyy="0.190317343914555"
+        iyz="-0.0370066794668489"
+        izz="0.17023089947442" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/left_ax1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/left_ax1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_left_ax1"
+    type="revolute">
+    <origin
+      xyz="0.32 0.414 -0.20588"
+      rpy="1.5708 -1.3032 3.1416" />
+    <parent
+      link="left_base_link" />
+    <child
+      link="left_ax1_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_ax2_link">
+    <inertial>
+      <origin
+        xyz="0.114261981989223 0.0114834545925739 0.281924885873274"
+        rpy="0 0 0" />
+      <mass
+        value="13.2263278217104" />
+      <inertia
+        ixx="0.907903650865628"
+        ixy="-0.00159870603611018"
+        ixz="-0.0714132755138986"
+        iyy="0.900004466664176"
+        iyz="-0.00127192738240511"
+        izz="0.0507672101715723" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/left_ax2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/left_ax2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_left_ax2"
+    type="revolute">
+    <origin
+      xyz="0 0.1 0.256"
+      rpy="-0.43364 0 0" />
+    <parent
+      link="left_ax1_link" />
+    <child
+      link="left_ax2_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_ax3_link">
+    <inertial>
+      <origin
+        xyz="-0.0249576045906602 -0.000815128768668516 0.0353268993208122"
+        rpy="0 0 0" />
+      <mass
+        value="9.66718520982022" />
+      <inertia
+        ixx="0.0798592731195725"
+        ixy="0.000397517509318337"
+        ixz="0.00118273694136779"
+        iyy="0.0824079564700508"
+        iyz="1.26176891650179E-05"
+        izz="0.0575349744128187" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/left_ax3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/left_ax3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_left_ax3"
+    type="revolute">
+    <origin
+      xyz="0 0 0.65"
+      rpy="-1.711 0 0" />
+    <parent
+      link="left_ax2_link" />
+    <child
+      link="left_ax3_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_ax4_link">
+    <inertial>
+      <origin
+        xyz="-7.93535487122465E-05 -0.00102852916519869 0.171751898781854"
+        rpy="0 0 0" />
+      <mass
+        value="6.72457696941017" />
+      <inertia
+        ixx="0.277474435704164"
+        ixy="3.15778769945096E-07"
+        ixz="0.000243710368440968"
+        iyy="0.280154001895505"
+        iyz="0.00088653832393662"
+        izz="0.0126328437993867" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/left_ax4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/left_ax4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_left_ax4"
+    type="revolute">
+    <origin
+      xyz="0 0 0.399209584669504"
+      rpy="0 0 -0.676756222163231" />
+    <parent
+      link="left_ax3_link" />
+    <child
+      link="left_ax4_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_ax5_link">
+    <inertial>
+      <origin
+        xyz="0.000394304484445884 2.73581365420883E-05 0.0194996642964657"
+        rpy="0 0 0" />
+      <mass
+        value="0.516713841833942" />
+      <inertia
+        ixx="0.0007381513575246"
+        ixy="1.04750887369574E-07"
+        ixz="7.31628703410563E-06"
+        iyy="0.000682974172461099"
+        iyz="-4.51867815873713E-07"
+        izz="0.000427037926406058" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/left_ax5_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/left_ax5_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_left_ax5"
+    type="revolute">
+    <origin
+      xyz="0 0 0.50079"
+      rpy="-0.275 0 0" />
+    <parent
+      link="left_ax4_link" />
+    <child
+      link="left_ax5_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_ax6_link">
+    <inertial>
+      <origin
+        xyz="-4.20254820622246E-05 2.9519830044844E-05 -0.00838049694797982"
+        rpy="0 0 0" />
+      <mass
+        value="0.0496246873705595" />
+      <inertia
+        ixx="1.2860503154964E-05"
+        ixy="9.720185365373E-10"
+        ixz="1.75691517652092E-08"
+        iyy="1.28375879657197E-05"
+        iyz="-1.7258900870181E-08"
+        izz="2.28536452643262E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/left_ax6_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/left_ax6_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_left_ax6"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0835212487680816"
+      rpy="0 0 -0.652645812290519" />
+    <parent
+      link="left_ax5_link" />
+    <child
+      link="left_ax6_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_base_link">
+    <inertial>
+      <origin
+        xyz="0.31999 0.05784 -0.20588"
+        rpy="0 0 0" />
+      <mass
+        value="89718" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/right_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/right_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_right_world2base"
+    type="fixed">
+    <origin
+      xyz="0.42458 0.37215 -1.2303"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="world" />
+    <child
+      link="right_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_ax1_Link">
+    <inertial>
+      <origin
+        xyz="-0.0110267286251676 0.0275268069987167 -0.100224017270846"
+        rpy="0 0 0" />
+      <mass
+        value="16.3852705908656" />
+      <inertia
+        ixx="0.166665248222832"
+        ixy="-0.00677698280679513"
+        ixz="-0.0181047436676293"
+        iyy="0.190314227047763"
+        iyz="-0.0370056061690362"
+        izz="0.170232307576813" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/right_ax1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/right_ax1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_right_ax1"
+    type="fixed">
+    <origin
+      xyz="0.32 0.67 -0.205879250693663"
+      rpy="-1.5707963267949 -1.35857667297279 0" />
+    <parent
+      link="right_base_link" />
+    <child
+      link="right_ax1_Link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_ax2_Link">
+    <inertial>
+      <origin
+        xyz="0.114261936026288 0.0114835001559429 0.281924941830189"
+        rpy="0 0 0" />
+      <mass
+        value="13.2263340883003" />
+      <inertia
+        ixx="0.907903542747366"
+        ixy="-0.00159865940180607"
+        ixz="-0.0714130772963481"
+        iyy="0.900004336511573"
+        iyz="-0.00127202523292762"
+        izz="0.0507671912381079" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/right_ax2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/right_ax2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_right_ax2"
+    type="fixed">
+    <origin
+      xyz="0 0.100000000000003 0"
+      rpy="-0.42251014752277 0 0" />
+    <parent
+      link="right_ax1_Link" />
+    <child
+      link="right_ax2_Link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_ax3_Link">
+    <inertial>
+      <origin
+        xyz="-0.0249574497776761 -0.000815017329537815 0.0353267456092087"
+        rpy="0 0 0" />
+      <mass
+        value="9.66716592507335" />
+      <inertia
+        ixx="0.0798594812232009"
+        ixy="0.000397916611159553"
+        ixz="0.0011829475279985"
+        iyy="0.0824084294339308"
+        iyz="1.20388691637677E-05"
+        izz="0.0575351806913174" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/right_ax3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/right_ax3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_right_ax3"
+    type="fixed">
+    <origin
+      xyz="0 0 0.650000000000011"
+      rpy="-1.73802179387651 0 0" />
+    <parent
+      link="right_ax2_Link" />
+    <child
+      link="right_ax3_Link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_ax4_Link">
+    <inertial>
+      <origin
+        xyz="-7.92652776845926E-05 -0.00102854058766411 -0.329038319028082"
+        rpy="0 0 0" />
+      <mass
+        value="6.72457775697355" />
+      <inertia
+        ixx="0.277474772407089"
+        ixy="3.24399300921652E-07"
+        ixz="0.00024361692874776"
+        iyy="0.280154357628688"
+        iyz="0.000886501442098215"
+        izz="0.0126329022647675" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/right_ax4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/right_ax4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_right_ax4"
+    type="fixed">
+    <origin
+      xyz="0 0 0.9"
+      rpy="0 0 -0.855373504395469" />
+    <parent
+      link="right_ax3_Link" />
+    <child
+      link="right_ax4_Link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_ax5_Link">
+    <inertial>
+      <origin
+        xyz="0.000394308607740534 2.72960629669472E-05 0.0194996530355188"
+        rpy="0 0 0" />
+      <mass
+        value="0.516714769268222" />
+      <inertia
+        ixx="0.000738152465896658"
+        ixy="1.0483324662465E-07"
+        ixz="7.31634123275902E-06"
+        iyy="0.000682974282055784"
+        iyz="-4.52106347622611E-07"
+        izz="0.000427038784027732" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/right_ax5_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/right_ax5_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_right_ax5"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="-0.156082422981834 0 0" />
+    <parent
+      link="right_ax4_Link" />
+    <child
+      link="right_ax5_Link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_ax6_Link">
+    <inertial>
+      <origin
+        xyz="-4.20247697348053E-05 2.95145162357291E-05 -0.0118497505520727"
+        rpy="0 0 0" />
+      <mass
+        value="0.0496306010021214" />
+      <inertia
+        ixx="1.28604747412209E-05"
+        ixy="1.38676066052576E-09"
+        ixz="1.75725088560889E-08"
+        iyy="1.2838573189094E-05"
+        iyz="-1.72563963793154E-08"
+        izz="2.28538168990932E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/right_ax6_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dual_RS006L/meshes/right_ax6_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_right_ax6"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0870000000000184"
+      rpy="0 0 1.83666402814914" />
+    <parent
+      link="right_ax5_Link" />
+    <child
+      link="right_ax6_Link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

@@ -1,0 +1,40 @@
+<launch>
+  <arg
+    name="model" />
+  <param
+    name="robot_description"
+    textfile="$(find dual_arm_robot_description)/urdf/dual_arm_robot_description.urdf" />
+  <node
+    name="joint_state_publisher_gui"
+    pkg="joint_state_publisher_gui"
+    type="joint_state_publisher_gui" />
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+  <node
+    name="joint_state_exchange_node"
+    pkg="joint_state_exchange"
+    type="joint_state_exchange_node" />
+  <!--<node
+    name="gripper_control_node"
+    pkg="dual_arm_base_control"
+    type="gripper_controller.py" />-->
+  <node
+    name="arm_control_node"
+    pkg="dual_arm_base_control"
+    type="gripper_controller.py" />
+  <!--<node
+    name="init_client_node"
+    pkg="dual_arm_init"
+    type="init_client.py" />-->
+  <node
+    name="init_server_node"
+    pkg="dual_arm_init"
+    type="init_server.py" />
+
+
+    <!-- Launch rivz display -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find dual_arm_robot_description)/rviz/dual_arm.rviz" output="screen" />
+
+</launch>
